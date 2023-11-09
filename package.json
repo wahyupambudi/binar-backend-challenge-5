@@ -4,7 +4,7 @@
   "description": "Challenge Chapter 4 - Nodejs, Express Js, Prisma - Bootcamp Backend Binar Academy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon index.js"
   },
   "repository": {
