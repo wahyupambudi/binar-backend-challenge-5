@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const { Get, Insert, GetByPK, Update, Delete } = require('../controller/user.controller')
 const { CheckPostUser } = require('../middleware/middleware')
+const { Authenticate } = require("../middleware/restrict");
+
 
 // Get User
 /**
@@ -28,7 +30,7 @@ const { CheckPostUser } = require('../middleware/middleware')
  *                   email:
  *                      type: string
  */
-router.get('/', Get)
+router.get('/', Authenticate, Get)
 
 
 // Get User By Id
@@ -70,7 +72,7 @@ router.get('/', Get)
  *                   identity_number:
  *                      type: number
  */
-router.get('/:userId', GetByPK)
+router.get('/:userId', Authenticate, GetByPK)
 
 
 // Post User
@@ -104,7 +106,7 @@ router.get('/:userId', GetByPK)
  *       201:
  *         description: User created successfully
  */
-router.post('/', CheckPostUser, Insert)
+router.post('/', CheckPostUser, Authenticate, Insert)
 
 
 // Update User
@@ -138,7 +140,7 @@ router.post('/', CheckPostUser, Insert)
  *       200:
  *         description: User updated successfully
  */
-router.put('/:userId', Update)
+router.put('/:userId', Authenticate, Update)
 
 // Delete
 /**
@@ -158,6 +160,6 @@ router.put('/:userId', Update)
  *       204:
  *         description: User deleted successfully
  */
-router.delete('/:userId', Delete)
+router.delete('/:userId', Authenticate, Delete)
 
 module.exports = router
