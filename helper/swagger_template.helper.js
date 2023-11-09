@@ -1,6 +1,5 @@
 const swaggerDefinition = {
     swaggerDefinition: {
-        openapi: '2.0.0',
         info: {
             title: 'Testing FGA Issue',
             version: '1.0.0',

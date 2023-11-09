@@ -13,6 +13,8 @@ const { Authenticate } = require("../middleware/restrict");
  *     tags:
  *      - "CRUD User"
  *     summary: Get all Users
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: A list of Users
@@ -41,6 +43,8 @@ router.get('/', Authenticate, Get)
  *     tags:
  *      - "CRUD User"
  *     summary: Get all By Id
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -83,6 +87,8 @@ router.get('/:userId', Authenticate, GetByPK)
  *     tags:
  *      - "CRUD User"
  *     summary: Create a new User
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -117,6 +123,8 @@ router.post('/', CheckPostUser, Authenticate, Insert)
  *     tags:
  *      - "CRUD User"
  *     summary: Update an User by ID
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -150,6 +158,8 @@ router.put('/:userId', Authenticate, Update)
  *     tags:
  *      - "CRUD User"
  *     summary: Delete an User by ID
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
