@@ -2,11 +2,13 @@ const express = require('express')
 const router = express.Router()
 const { Get, GetByPK, Insert, Update, Delete } = require('../controller/account.controller')
 const { CheckPostAccount } = require('../middleware/middleware')
+const { Authenticate } = require("../middleware/restrict");
 
-router.get('/:id', GetByPK)
-router.post('/', CheckPostAccount, Insert)
-router.put('/:id', Update)
-router.delete('/:id', Delete)
+
+router.get('/:id', Authenticate, GetByPK)
+router.post('/', CheckPostAccount, Authenticate, Insert)
+router.put('/:id', Authenticate, Update)
+router.delete('/:id', Authenticate, Delete)
 
 
 // Read
@@ -32,7 +34,7 @@ router.delete('/:id', Delete)
  *                   name:
  *                     type: string
  */
-router.get('/', Get)
+router.get('/', Authenticate, Get)
 
 
 module.exports = router

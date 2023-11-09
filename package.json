@@ -1,5 +1,5 @@
 {
-  "name": "binar-challenge-4-expressjs",
+  "name": "binar-backend-challenge-5",
   "version": "1.0.0",
   "description": "Challenge Chapter 4 - Nodejs, Express Js, Prisma - Bootcamp Backend Binar Academy",
   "main": "index.js",
@@ -9,22 +9,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wahyupambudi/binar-challenge-4-expressjs.git"
+    "url": "git+https://github.com/wahyupambudi/binar-backend-challenge-5.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wahyu Pambudi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wahyupambudi/binar-challenge-4-expressjs/issues"
+    "url": "https://github.com/wahyupambudi/binar-backend-challenge-5/issues"
   },
-  "homepage": "https://github.com/wahyupambudi/binar-challenge-4-expressjs#readme",
+  "homepage": "https://github.com/wahyupambudi/binar-backend-challenge-5#readme",
   "dependencies": {
     "@prisma/client": "^5.5.2",
+    "bcrypt": "^5.1.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
-    "ejs": "^3.1.9",
+    "eslint": "^8.52.0",
     "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "jest": "^29.7.0",
     "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
+    "prettier": "^3.0.3",
+    "supertest": "^6.3.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
   },

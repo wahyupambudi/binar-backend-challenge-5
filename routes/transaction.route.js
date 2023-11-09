@@ -3,10 +3,12 @@ const router = express.Router()
 // const { Get, Insert, GetByPK, Update, Delete } = require('../controller/transaction.controller')
 const {Get, Insert, GetByPK, Deposit, Withdraw} = require('../controller/transaction.controller')
 const { CheckPostTransaction, CheckPostDeposit } = require('../middleware/middleware')
+const { Authenticate } = require("../middleware/restrict");
 
-router.post('/', CheckPostTransaction, Insert)
-router.post('/deposit', CheckPostDeposit, Deposit)
-router.post('/withdraw', CheckPostDeposit, Withdraw)
+
+router.post('/', CheckPostTransaction, Authenticate, Insert)
+router.post('/deposit', CheckPostDeposit, Authenticate, Deposit)
+router.post('/withdraw', CheckPostDeposit, Authenticate, Withdraw)
 // router.put('/:transaction', Update)
 // router.delete('/:transaction', Delete)
 
@@ -40,7 +42,7 @@ router.post('/withdraw', CheckPostDeposit, Withdraw)
  *                   type:
  *                      type: string
  */
-router.get('/', Get)
+router.get('/', Authenticate, Get)
 
 
 // Get Transaction By Id
@@ -78,6 +80,6 @@ router.get('/', Get)
  *                   type:
  *                      type: string
  */
-router.get('/:id', GetByPK)
+router.get('/:id', Authenticate, GetByPK)
 
 module.exports = router
