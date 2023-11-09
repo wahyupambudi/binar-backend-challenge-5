@@ -24,7 +24,7 @@ async function Insert(req, res) {
       },
     });
 
-    let resp = ResponseTemplate(users, "success", null, 200);
+    let resp = ResponseTemplate(users, "success to create user", null, 200);
     res.json(resp);
     return;
   } catch (error) {
@@ -63,7 +63,7 @@ async function Get(req, res) {
       },
     });
 
-    let resp = ResponseTemplate(users, "success", null, 200);
+    let resp = ResponseTemplate(users, "success to get user", null, 200);
     res.json(resp);
     return;
   } catch (error) {
@@ -86,7 +86,7 @@ async function GetByPK(req, res) {
       },
     });
 
-    let resp = ResponseTemplate(users, "success", null, 200);
+    let resp = ResponseTemplate(users, "success to get user by id", null, 200);
     res.json(resp);
     return;
   } catch (error) {
