@@ -16,6 +16,18 @@ const swaggerOptions = {
       version: "1.0.0",
       description: "API MyBank for Users, Accounts, Transactions",
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "apiKey",
+          in: "header",
+          name: "Authorization",
+          // scheme: 'bearer',
+          // bearerFormat: 'JWT',
+          description: "Input your Token for Get Access",
+        },
+      },
+    },
     servers: [
       {
         url: "http://localhost:8080",
@@ -26,6 +38,7 @@ const swaggerOptions = {
     ],
   },
   apis: [
+    "./routes/auth.route.js",
     "./routes/user.route.js",
     "./routes/account.route.js",
     "./routes/transaction.route.js",
